@@ -1,42 +1,63 @@
-const wordsWithHints = [
-    { word: "javascript", hint: "Scripting language for web pages" },
-    { word: "html", hint: "Markup language for web pages" },
-    { word: "css", hint: "Style sheet language" },
-    { word: "python", hint: "Versatile programming language" },
-    { word: "ruby", hint: "Dynamic object-oriented language" },
-    { word: "java", hint: "High-level object-oriented language" },
-    { word: "php", hint: "General-purpose scripting language" },
-    { word: "swift", hint: "Programming language for Apple platforms" }
-  ];
-  let currentWordObject = {};
-  
-  function shuffleWord(word) {
-    return word.split('').sort(function(){return 0.5-Math.random()}).join('');
-  }
-  
-  function newWord() {
-    const randomIndex = Math.floor(Math.random() * wordsWithHints.length);
-    currentWordObject = wordsWithHints[randomIndex];
-    const scrambledWord = shuffleWord(currentWordObject.word);
-    document.getElementById('word-container').textContent = scrambledWord;
-    // Display up to 3 words of the hint
-    const hintWords = currentWordObject.hint.split(' ').slice(0, 3).join(' ');
-    document.getElementById('hint').textContent = `Hint: ${hintWords}`;
-  }
-  
-  function checkAnswer() {
-    const userGuess = document.getElementById('input-box').value.toLowerCase();
-    if (userGuess === currentWordObject.word) {
-      alert('Congratulations! You guessed the word correctly.');
-      newWord();
-      document.getElementById('input-box').value = ""; // Clear input field
-    } else {
-      alert('Oops! Incorrect guess. Try again.');
-    }
-  }
-  
-  document.getElementById('submit-button').addEventListener('click', checkAnswer);
-  
-  // Initialize the game with a random word and hint
-  newWord();
-  
+// script.js 
+
+const words = [ 
+	"react", 
+	"angular", 
+	"javascript", 
+	"bootstrap", 
+	"tailwind", 
+]; 
+
+// Respective list of hints 
+const hints = [ 
+	"JavaScript framework", 
+	"JavaScript Framework", 
+	"Scripting Language", 
+	"Styling Library", 
+	"Styling Library", 
+]; 
+
+// Initialize display word 
+let displayWord = ""; 
+
+// Function to shuffle letters 
+function shuffle(str) { 
+	strArray = Array.from(str); 
+	for (let i = 0; i < strArray.length - 1; ++i) { 
+		let j = Math.floor(Math.random() * strArray.length); 
+		// Swap letters 
+		let temp = strArray[i]; 
+		strArray[i] = strArray[j]; 
+		strArray[j] = temp; 
+	} 
+	return strArray.join(" "); 
+} 
+
+// Function to check input and display result 
+function check() { 
+	let input = document.getElementById("input"); 
+	let output = document.getElementById("output"); 
+	if ( 
+		input.value.toLocaleLowerCase() === 
+		displayWord.toLocaleLowerCase() 
+	) 
+		output.innerHTML = "Result: Correct"; 
+	else output.innerHTML = "Result: Incorrect"; 
+} 
+
+// To refresh and show new word 
+function refresh() { 
+	index = Math.floor(Math.random() * 5); 
+	displayWord = words[index]; 
+	displayHint = hints[index]; 
+	scrambleWord = 
+		document.getElementById("scrambleWord"); 
+	scrambleWord.innerText = 
+		shuffle(displayWord).toUpperCase(); 
+	let hint = document.getElementById("hint"); 
+	hint.innerHTML = "<b>Hint:</b> " + displayHint; 
+	document.getElementById("output").innerText = "Result:"; 
+} 
+
+// Function call when page load for first time 
+refresh();

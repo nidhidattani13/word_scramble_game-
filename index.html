@@ -1,16 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Word Scramble Game</title>
-<link rel="stylesheet" type="text/css" href="index.css">
-</head>
-<body>
-  <h1>Word Scramble Game</h1>
-  <div id="word-container"></div>
-  <input type="text" id="input-box" placeholder="Enter your guess">
-  <button id="submit-button">Submit</button>
-  <script src="index.js"></script>
-</body>
+<!--index.html-->
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+	<meta charset="UTF-8" /> 
+	<meta name="viewport"
+		content="width=device-width, 
+				initial-scale=1.0" /> 
+	<title>word scramble</title> 
+	<link href="index.css" rel="stylesheet" /> 
+</head> 
+
+<body> 
+	<div class="root"> 
+		<h1 class="title">Word Scramble Game</h1> 
+		<div id="scrambled"> 
+			<h2 id="scrambleWord">Word</h2> 
+			<p id="hint"></p> 
+		</div> 
+		<div id="form"> 
+			<input id="input"
+				type="text"
+				placeholder="Guess correct word" /> 
+		</div> 
+		<h3 id="output">Result:</h3> 
+		<div class="foot"> 
+			<button type="button"
+					onclick="check()"> 
+				Check 
+			</button> 
+			<button type="button"
+					onclick="refresh()"> 
+				Refresh 
+			</button> 
+		</div> 
+		<script src="index.js"></script> 
+	</div> 
+</body> 
+
 </html>
