@@ -1,20 +1,20 @@
 // script.js 
 
 const words = [ 
-	"react", 
-	"angular", 
-	"javascript", 
-	"bootstrap", 
-	"tailwind", 
+    "algorithm", 
+    "variable", 
+    "iteration", 
+    "datastructure", 
+    "conditional", 
 ]; 
 
 // Respective list of hints 
 const hints = [ 
-	"JavaScript framework", 
-	"JavaScript Framework", 
-	"Scripting Language", 
-	"Styling Library", 
-	"Styling Library", 
+    "Problem-solving steps", 
+    "Stores changing data", 
+    "Repeated execution", 
+    "Organizes data", 
+    "Executes based on conditions", 
 ]; 
 
 // Initialize display word 
@@ -44,20 +44,20 @@ function check() {
 		output.innerHTML = "Result: Correct"; 
 	else output.innerHTML = "Result: Incorrect"; 
 } 
-
 // To refresh and show new word 
 function refresh() { 
-	index = Math.floor(Math.random() * 5); 
-	displayWord = words[index]; 
-	displayHint = hints[index]; 
-	scrambleWord = 
-		document.getElementById("scrambleWord"); 
-	scrambleWord.innerText = 
-		shuffle(displayWord).toUpperCase(); 
-	let hint = document.getElementById("hint"); 
-	hint.innerHTML = "<b>Hint:</b> " + displayHint; 
-	document.getElementById("output").innerText = "Result:"; 
-} 
+    index = Math.floor(Math.random() * 5); 
+    displayWord = words[index]; 
+    displayHint = hints[index]; 
+    scrambleWord = document.getElementById("scrambleWord"); 
+    scrambleWord.innerText = shuffle(displayWord).toUpperCase(); 
+    let hint = document.getElementById("hint"); 
+    hint.innerHTML = "<b>Hint:</b> " + displayHint; 
+    document.getElementById("output").innerText = "Result:"; 
+
+    // Clear input field
+    document.getElementById("input").value = ""; 
+}
 
 // Function call when page load for first time 
 refresh();
