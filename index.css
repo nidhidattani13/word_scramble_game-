@@ -5,13 +5,13 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: #fbe9fc;
 }
 
 .root {
     font-size: large;
-    color: #333;
-    background-color: #fff;
+    color: #fcfcfc;
+    background-color: #925555;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     padding: 2% 5%;
     text-align: center;
@@ -19,14 +19,14 @@ body {
 }
 
 .title {
-    border-bottom: 2px dashed #333;
+    border-bottom: 2px dashed #f0eaea;
 }
 
 input {
     font-size: medium;
     padding: 8px;
     outline: none;
-    border: 1px solid #ccc;
+    border: 1px solid #da8282;
     border-radius: 5px;
     width: 80%;
     margin-bottom: 10px;
@@ -42,10 +42,10 @@ input {
 .foot>button {
     flex: 1;
     padding: 10px;
-    background-color: #51b355;
+    background-color: #cebccc;
     border: none;
     border-radius: 5px;
-    color: #fff;
+    color: #000000;
     font-size: medium;
     cursor: pointer;
     margin-right: 10px;

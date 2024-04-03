@@ -1,21 +1,29 @@
-// script.js 
+const words = [
+    "algorithm",
+    "variable",
+    "iteration",
+    "datastructure",
+    "conditional",
+    "function",
+    "array",
+    "loop",
+    "recursion",
+    "object"
+];
 
-const words = [ 
-    "algorithm", 
-    "variable", 
-    "iteration", 
-    "datastructure", 
-    "conditional", 
-]; 
-
-// Respective list of hints 
-const hints = [ 
-    "Problem-solving steps", 
-    "Stores changing data", 
-    "Repeated execution", 
-    "Organizes data", 
-    "Executes based on conditions", 
-]; 
+const hints = [
+    "Problem-solving steps",
+    "Stores changing data",
+    "Repeated execution",
+    "Organizes data",
+    "Executes based on conditions",
+    "Reusable block of code",
+    "Collection of elements",
+    "Repetitive execution",
+    "Function calls itself",
+    "Data structure holding properties"
+];
+ 
 
 // Initialize display word 
 let displayWord = ""; 
@@ -44,9 +52,11 @@ function check() {
 		output.innerHTML = "Result: Correct"; 
 	else output.innerHTML = "Result: Incorrect"; 
 } 
+
+
 // To refresh and show new word 
 function refresh() { 
-    index = Math.floor(Math.random() * 5); 
+    index = Math.floor(Math.random() * words.length); 
     displayWord = words[index]; 
     displayHint = hints[index]; 
     scrambleWord = document.getElementById("scrambleWord"); 
